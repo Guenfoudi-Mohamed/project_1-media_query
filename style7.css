@@ -1,0 +1,161 @@
+@charset "utf-8";
+*{padding: 0px;margin: 0px;box-sizing: border-box;list-style: none;text-decoration: none;font-family: 'Montserrat', 'Helvetica', sans-serif;outline: none;}
+/*==START >>  BODY==*/
+body{background-color: white;/*perspective min katkun kataeter 3la position >> fixed  xi balis child da5el dyalha  w mkt5lihx y5dem */}
+/*start check_dark*/
+body > input[type="checkbox"]{display:none;}
+body > input[class="check_dark"]:checked ~ header{filter: brightness(65%);transition: 1s;}
+body > input[class="check_dark"]:checked ~ header{background-image: url("home-banner.jpg");filter:brightness(60%);transition: 1s;}
+body > input[class="check_dark"]:checked ~ header > .con > .navbar > .container label{background-color: transparent;transition: 1.5s;border-color: white;}
+body > input[class="check_dark"]:checked ~ header > .con > .navbar > .container label::after{margin-left: 24px; background-color: white;border-color:black;}
+body > input[class="check_dark"]:checked ~ main{filter: brightness(65%);transition: 1s;}
+body > input[class="check_dark"]:checked ~ main .section_1 .container .form{background-color:#262626;border-color:#303030;color: white;transition: 1s;}
+body > input[class="check_dark"]:checked ~ main .section_1{background-color:#262626;transition: 1s;}
+body > input[class="check_dark"]:checked ~ main .section_2 .container .form{background-color:#262626;border-color:#303030;color: white;transition:1s;}
+body > input[class="check_dark"]:checked ~ main .section_3{background-color:#262626;color: white;transition: 1s;}
+body > input[class="check_dark"]:checked ~ main .section_3 .container .content_bottom .inp .input a{color: white;text-shadow: -1px 2px black,1px -2px black,-1px -2px black,1px 2px black;transition: 1s;}
+body > input[class="check_dark"]:checked ~ footer{filter: brightness(65%);transition: 1s;}
+body > input[class="check_dark"]:checked ~ footer{background-color:#262626;color: white;transition: 1s;}
+body > input[class="popup_show-close"]:checked ~ .pop_up{display:inline-block;z-index: 3;overflow:visible;}
+/*==START >> HEADER==*/
+header{background-image: url("home-banner.jpg");background-repeat: no-repeat;background-attachment:fixed;background-size: cover;background-position: center;}
+header > .con{overflow: hidden;}
+header .con .navbar{background-color: rgba(0, 0, 0, 0.65);padding: 20px 0px;overflow: hidden;}
+header .con .navbar .container{width: 90%;margin: auto;display: flex;justify-content: space-between;align-items: center;position: relative;}
+header .con .navbar .container .menu_toggle{display: none;width: 30px;height: 21px;justify-content: space-between;flex-direction: column;position: absolute;right: 0px;}
+header .con .navbar .container .menu_toggle .bar{height: 3px;width: 100%;background-color: white;}
+header .con .navbar .container .list{overflow: hidden;}
+header .con .navbar .container .list li{display: inline-block;margin-right: 15px;}
+header .con .navbar .container .list li:last-child{margin-right: 0px;}
+header .con .navbar .container .list li a{color: white;display: inline-block;}
+header .con .navbar .container .list li a:hover{color: yellow;transition: 1s;}
+header .con .navbar .container > .search{transition-duration:  1.5s;}
+header .con .navbar .container > label[class="search"] .fa{color: white;cursor: pointer;}
+header .con .navbar .container > label[class="search"] .fa:hover{color: yellow;transition: 0.8s;}
+header .con .navbar .container .check_dark{width: 50px;height: 27px;background-color: rgba(255, 255, 255, 1);border-radius:25px;position:relative;display:flex;align-items:center;border: 2px solid black;cursor: pointer;}
+header .con .navbar .container .check_dark::after{transition: 1s;content:'';border: 1px solid white;width:20px;height:20px;background-color:black;position:absolute;border-radius: 50%;margin-left: 0px;transform: scale(1.3);}
+header .header_bottom{width: 100%;min-height: 331px;display: flex;align-items: center;justify-content: center;}
+header .header_bottom .content{max-width: 40%;text-align: center;color: white;}
+header .header_bottom .content{text-shadow: -2px 1px black,2px 1px black,-2px -1px black,2px -1px black;transform: scale(1.2,1.2);}
+@media (min-width:300px) and (max-width:995px){
+    header .con{max-height:72px;transition-duration: 1.1s;transition-timing-function: ease-in;} /*== transition makytaetrex b max-height walakin 3ks bnsba l padding and margin << y3ni madirx property m3a div li radir liha drop down <<==*/
+    header .con .navbar .container{flex-direction: column;align-items: flex-start;}
+    header .con .navbar .container .menu_toggle{display: flex;margin-top: 5px;}
+    header .con .navbar .container .menu_toggle:hover .bar{background-color: yellow;box-shadow: 0px 0px 10px 1px white;}
+    header .con .navbar .container .list{margin:10px 0px 5px 0px;width: 100%;} 
+    header .con .navbar .container .list li{display: block;margin-right: 0px;}
+    header .con .navbar .container .list li a{padding: 15px 0px;border-bottom:2px solid rgba(177, 177, 177, 0.20);width: 100%;}
+    header .con .navbar .container .list li:last-child > a{border-bottom:none;}
+    header .con .navbar .container  > label[class="search"] .fa{margin: 7px;}
+    header .con .navbar .container > label[class="check_dark"]{margin:12px 0px;right: 0px;}
+    body input[class="check"]:checked ~ header > .con{max-height:507px;}
+}
+/*==END >> HEADER==*/
+
+    /*Start Pop_up*/
+.pop_up{width: 100vw /*or 100% */;min-height: 100vh;position: fixed;top: 0px; background-color: rgba(1, 1, 1, 0.8);display: none;}
+.pop_up .search{ position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);max-width: 250px;background-color: rgba(255, 255, 255, 0);display: flex;justify-content: center;flex-direction: column;align-items: center;overflow: hidden;}
+.pop_up .search .content{ width: 100%;display: flex; justify-content: space-between;padding: 15px 20px; align-items: center;color: white;background-color:#ff5e57; border-radius: 10px 10px 0px 0px;}
+.pop_up .search .content h2{font-size: 23px;text-shadow: -1px 2px black;}
+.pop_up .search .content label{font-size: 35px;text-shadow: 0px 2px black;cursor: pointer;}
+.pop_up .search .inp{width:100%;display: flex;align-items: center;overflow: hidden;border-radius: 0px 0px 10px 10px;}
+.pop_up .search .inp input[type="text"]{border: none;padding: 20px 10px;width:85%;text-indent: 12px; font-weight: bold; padding-left:  5px;font-size: 18px;text-transform: capitalize;display: inline;padding-left: 5px;}
+.pop_up .search .inp input[type="text"]::placeholder{color: darkgray;font-size: 18px; text-transform: capitalize;}
+.pop_up .search .inp .img{background-color:white;height: 100%;flex: 1; position: relative;min-width: 40px;}
+.pop_up .search .inp img{width: 33px;height: 30px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);cursor: pointer;padding-right: 5px;}
+body > input[class="close_popup"]:checked ~ .pop_up{display: inline-block;}
+    /*End Pop_up*/
+/*==START >> MAIN==*/
+main{width: 100%;}
+    /*start >> section_1*/
+main .section_1{min-height: 400px;width: 100%;padding:60px 0px;display: flex;align-items: center;transition:background 1s;}
+main .section_1 .container{ margin: auto;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+main .section_1 .container img{min-width: 55%;}
+main .section_1 .container .form{ width: 45%; min-height:150px;border: 0.3px solid #eaeaea;box-shadow: 0px 3px  15px 0.5px #808080; padding:50px;margin-top: -105px;background-color: white;transition:background 1s;}
+main .section_1 .container .form h2{font-size: 20px;letter-spacing: 1px; font-weight: 400;font-family:Helvetica;text-align: center; }
+main .section_1 .container .form p{text-align: center;}
+@media (min-width:300px) and (max-width:995px){
+    main .section_1{min-height: 450px;}
+    main .section_1 .container img{max-width: 90%;}
+    main .section_1 .container .form{width:75%;max-width: 392.25px;padding: 10px;margin-top:-60px;}
+    main .section_1 .container .form h2{font-size:18px;}
+    main .section_1 .container .form p{text-align: justify;width: 90%;margin:0px 5%;}
+}
+    /*END >> section_1*/
+    /*start >> section_2*/
+main .section_2{min-height: 400px; background-image: linear-gradient(to right,#cccc00,rgb(39, 39, 0));display: flex;align-items: center;}
+main .section_2 .container{width: 90%;margin: auto;display: flex;justify-content: space-between;align-items: center;}
+main .section_2 .container .client_feedback,.form{width: 43%;}
+main .section_2 .container .client_feedback h1{font-size:33px;}
+main .section_2 .container .form{background-color: white;display: flex;justify-content: space-between;min-height: 100px;padding: 2em;transition:background 1s;}
+main .section_2 .container .form img{width: 80px;height: 80px;}
+main .section_2 .container .form .content{width: 80%;}
+main .section_2 .container .form .content h3{margin: 20px 0px;}
+@media (min-width:300px) and (max-width:995px){
+    main .section_2 .container{display:flex;flex-direction: column;padding: 5em 0px;}
+    main .section_2 .container .client_feedback,.form{width: 90%;}
+    main .section_2 .container .client_feedback{margin-bottom: 40px;}
+    main .section_2 .container .client_feedback h1{text-align: center;}
+    main .section_2 .container .client_feedback p{text-align: justify;}
+    main .section_2 .container .form {display: flex;flex-direction: column;align-items: center;}
+    main .section_2 .container .form .content{width: 100%;margin-top: 15px;}
+    main .section_2 .container .form .content p{text-align: justify;}
+    main .section_2 .container .form .content h3{margin: 10px 0px;}
+}
+    /*END >> section_2*/
+    /*start >> section_3*/
+main .section_3{min-height: 600px;transition:background 1s;}
+main .section_3 .container{max-width: 90%; margin: auto;padding-top: 40px;}
+main .section_3 .container .content_top{text-align: center;width: 100%;}
+main .section_3 .container .content_top .title{padding-bottom: 10px;border-bottom:7px solid #c6c600;max-width:370px;margin :0px auto;margin-bottom: 20px;}
+main .section_3 .container .content_top h1{font-size: 35px;}
+
+main .section_3 .container .content_top .forms{text-align: center;margin:auto;justify-content:space-between;display: flex;flex-wrap: wrap;}
+main .section_3 .container .content_top .forms .form{ display: inline-block;max-width:400px;min-height: 90px; border: 0.1px solid #e7e7e7;padding: 20px;cursor: pointer;margin:10px;}
+main .section_3 .container .content_top .forms .form:hover{transition: 0.5s;background-color:#f0f0f0;}
+main .section_3 .container .content_top .forms .form h3{color:#4a4a4a;margin-bottom: 7px; font-style: italic;}
+main .section_3 .container .content_top .forms .form p{color:#a2a2a2;}
+main .section_3 .container .content_bottom .inp {display: flex;justify-content: center;align-items: center; width: 100%;min-height: 80px;padding: 50px;}
+main .section_3 .container .content_bottom .inp .input{max-width:260px;background-color: #ecec00;padding: 10px;border: 0.1px solid #e6e6e6;}
+main .section_3 .container .content_bottom .inp .input a{color: #292929;font-weight:bolder;text-shadow: 1px 2px white,-1px 2px white,1px -2px white,-1px -2px white;}
+main .section_3 .container .content_bottom .inp .input:hover a{color:#ffffff;}
+main .section_3 .container .content_bottom .inp .input:hover a{text-shadow:0.5px 1px black,-0.5px 1px black,0.5px -1px black,-0.5px -1px black;transition-duration:1s;transition-delay:0.05s;}
+main .section_3 .container .content_bottom .imgs{width: 100%;display: flex;justify-content: center;}
+main .section_3 .container .content_bottom .imgs img{overflow: hidden;min-width: 150px;filter:grayscale(100%); max-height:240px;}
+main .section_3 .container .content_bottom .imgs img:hover{filter:grayscale(0%);transition:filter 0.7s;/*transform: scale(1.0)*/}
+@media (min-width:300px) and (max-width:1430px){
+    main .section_3 .container .content_top .forms{justify-content: center;}
+    main .section_3 .container .content_bottom .imgs{width: 100%;display: flex;flex-wrap: wrap;justify-content: center;align-items: center;}
+    main .section_3 .container .content_bottom .imgs img{margin: 10px;filter:grayscale(100%);display: inline-block;}
+    main .section_3 .container .content_bottom .imgs img:hover{filter:grayscale(0%);}
+}
+
+    /*END >> section_3*/
+/*==END >> main==*/
+/*==start >> footer==*/
+footer{min-height:300px;width: 100%;background-color:#000f1b;display: flex;justify-content: center; align-items: center;transition:background 1s;}
+footer .container{width: 90%;height: auto;display: flex;justify-content:space-between;}
+footer .container .about  > p{color: #bebebe;font-weight: bold;}
+footer .container .about  > p > span{color: yellow;}
+footer .container .about{color: white;max-width:450px;}
+footer .container .newsletter{color: white;max-width:450px;}
+footer .container .newsletter  > p{color: #bebebe;font-weight: bold;}
+footer .container .newsletter li{margin: 10px 0px; overflow: hidden;display: flex;justify-content: center;}
+footer .container .newsletter li input{padding: 15px;border: none;height: 45px;}
+footer .container .newsletter li input[type="email"]{border-radius: 10px 0px 0px 10px;max-width: 20em;flex: 1;color:dimgray;font-weight: bold;}
+footer .container .newsletter li input[type="button"]{border-radius: 0px 10px 10px 0px;max-width: auto; color:red; background-color: yellow;}
+footer .container .follow_me{max-width:450px;color: white;}
+footer .container .follow_me > p{color: #bebebe;font-weight: bold;}
+footer .container .follow_me a i{color: white;display: inline-block;margin: 5px;}
+footer .container .follow_me a i:hover{color: #d8d800;}
+@media (min-width:300px) and (max-width:995px){
+    footer .container{width: 90%;height: auto;display: flex;justify-content:center;align-items: center;flex-direction: column;margin: 50px 0px;}
+    footer .container .border{height: 4px; width: 120px;margin:7px auto;background-color: white;border-radius: 15px;}
+    footer .container .about h3{text-align: center;}
+    footer .container .about p{text-align: justify;}
+    footer .container .newsletter{margin: 50px;min-width:270px;}
+    footer .container .newsletter h3,p{text-align: center;}
+    footer .container .follow_me h3{text-align: center;}
+    footer .container .follow_me .social{display: flex;justify-content: center;}
+}
+/*==END >> footer==*/
