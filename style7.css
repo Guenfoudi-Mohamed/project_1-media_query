@@ -1,7 +1,7 @@
 @charset "utf-8";
 *{padding: 0px;margin: 0px;box-sizing: border-box;list-style: none;text-decoration: none;font-family: 'Montserrat', 'Helvetica', sans-serif;outline: none;}
 /*==START >>  BODY==*/
-body{background-color: white;max-width:1440px;margin:0px auto;overflow:hidden;/*perspective min katkun kataeter 3la position >> fixed  xi balis child da5el dyalha  w mkt5lihx y5dem */}
+body{max-width:1440px;margin:0px auto;background-color: #fff;/*perspective min katkun kataeter 3la position >> fixed  xi balis child da5el dyalha  w mkt5lihx y5dem */}
 /*start check_dark*/
 body > input[type="checkbox"]{display:none;}
 body > input[class="check_dark"]:checked ~ header{filter: brightness(65%);transition: 1s;}
